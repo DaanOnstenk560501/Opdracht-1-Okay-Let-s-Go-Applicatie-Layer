@@ -21,6 +21,8 @@ func main() {
 
     if !toegestaneKentekens[kenteken] {
         fmt.Println("U heeft helaas geen toegang tot het parkeerterrein")
+        fmt.Println("Druk op Enter om af te sluiten...")
+        fmt.Scanln()
         return
     }
 
@@ -36,8 +38,12 @@ func main() {
         groet = "Goedenavond"
     default:
         fmt.Println("Sorry, de parkeerplaats is 's nachts gesloten")
+        fmt.Println("Druk op Enter om af te sluiten...")
+        fmt.Scanln()
         return
     }
 
     fmt.Println(groet + "! Welkom bij Fonteyn Vakantieparken")
+    fmt.Println("Druk op Enter om af te sluiten...")
+    fmt.Scanln()
 }
