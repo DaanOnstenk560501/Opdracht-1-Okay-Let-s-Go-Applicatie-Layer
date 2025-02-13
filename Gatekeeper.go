@@ -2,10 +2,28 @@ package main
 
 import (
     "fmt"
+    "strings"
     "time"
 )
 
 func main() {
+    var kenteken string
+    fmt.Print("Voer uw kenteken in: ")
+    fmt.Scanln(&kenteken)
+
+    kenteken = strings.ToUpper(kenteken)
+
+    toegestaneKentekens := map[string]bool{
+        "ABC123": true,
+        "XYZ789": true,
+        "LMN456": true,
+    }
+
+    if !toegestaneKentekens[kenteken] {
+        fmt.Println("U heeft helaas geen toegang tot het parkeerterrein")
+        return
+    }
+
     HuidigeTijd := time.Now().Hour()
     var groet string
 
@@ -22,5 +40,4 @@ func main() {
     }
 
     fmt.Println(groet + "! Welkom bij Fonteyn Vakantieparken")
-
 }
